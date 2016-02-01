@@ -1,0 +1,8 @@
+.btn-first {
+  border: 3px solid black;
+  border-radius: 10px;
+  height: 75px;
+  text-align: center;
+  font-size: 45px;
+  border-spacing: inherit;
+}
