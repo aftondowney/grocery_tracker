@@ -5,22 +5,39 @@
 //   this.shopping = [];
 // }
 
-function Pantry(itemName, itemQuantity) {
+function Pantry(itemName, pantryQuantity) {
   this.itemName = itemName;
-  this.itemQuantity = itemQuantity;
+  this.pantryQuantity = pantryQuantity;
 }
 
-function Shopping(itemName, itemQuantity) {
+function Shopping(itemName, shopQuantity) {
   this.itemName = itemName;
-  this.itemQuantity = itemQuantity;
+  this.shopQuantity = shopQuantity;
 }
 
 Pantry.prototype.itemIncrease = function(item){
   var itemsPurchased = item;
-    return this.itemQuantity += itemsPurchased;
+    return this.pantryQuantity += itemsPurchased;
 }
 
 Pantry.prototype.itemDecrease = function(item){
   var itemsPurchased = item;
-    return this.itemQuantity -= itemsPurchased;
+    return this.pantryQuantity -= itemsPurchased;
 }
+
+$(document).ready(function() {
+  $("form#shopping").submit(function(event) {
+    var shoppingList = [];
+    var shopItem = $("input#shopItem").val();
+    var shopQuantity = $("input#shopQuantity").val();
+    var newShopEntry = new Shopping(shopItem, shopQuantity);
+    newShopEntry.push
+
+
+
+
+
+    var itemsPurchased = Shopping.shopQuantity;
+
+     event.preventDefault();
+  })
