@@ -14,3 +14,8 @@ function Shopping(itemName, itemQuantity) {
   this.itemName = itemName;
   this.itemQuantity = itemQuantity;
 }
+
+Pantry.prototype.itemIncrease = function(item){
+  var itemsPurchased = item;
+    return this.itemQuantity += itemsPurchased;
+}

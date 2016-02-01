@@ -16,8 +16,8 @@ describe('Pantry', function() {
   });
 
   it ("will increase item quantity of pantry based on user input", function() {
-    var testPanty = new Pantry ("banana", 3);
-    expect (testPantry.itemIncrease).to.equal(5);
+    var testPantry = new Pantry ("banana", 3);
+    expect(testPantry.itemIncrease(2)).to.equal(5);
   })
 });
 
