@@ -8,3 +8,15 @@ describe('User', function() {
     expect(testUser.shopping).to.eql([]);
   });
 });
+
+describe('Pantry', function() {
+  it("creates a new list of items already existing in users pantry", function() {
+    var testPantry = new Pantry ("banana", 3, 1, "02/01/2016");
+    expect(testPantry.itemName).to.equal("banana");
+    expect(testPantry.itemQuantity).to.equal(3);
+    expect(testPantry.itemUsage).to.equal(1);
+    expect(testPantry.itemExpiration).to.equal("02/01/2016");
+  });
+});
+
+describe()
