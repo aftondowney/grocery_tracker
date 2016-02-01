@@ -19,6 +19,10 @@ Shopping.prototype.expandList = function(){
   return this.shopName + " x" + this.shopQuantity;
 }
 
+Pantry.prototype.expandList = function(){
+  return this.pantryName + " x" + this.pantryQuantity;
+}
+
 Pantry.prototype.itemIncrease = function(item){
   var itemsPurchased = item;
     return this.pantryQuantity += itemsPurchased;
