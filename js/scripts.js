@@ -36,9 +36,19 @@ $(document).ready(function() {
     var shopQuantity = $("input#shopQuantity").val();
     var newShopEntry = new Shopping(shopItem, shopQuantity);
     shoppingList.push(newShopEntry);
+    $('ul#shoppingList').append('<li><span class='shopping'>' + newShopEntry.expandList + '</span></li>'); //should this be in the submit function or outside immediately following?
   });
 
-  // $('ul#shoppingList').append('<li><span class='shopping'>' + ITEMENTRY + 'x' + ITEMQUANTITY + '</span></li>')
+  $("form#pantrySubmit").submit(function(event) {
+    var pantryList = [];
+    var pantryItem = $("input#pantryItem").val();
+    var pantryQuantity = $("input#pantryQuantity").val();
+    var newPantryEntry = new Pantry(pantryItem, pantryQuantity);
+    pantryList.push(newPantryEntry);
+    $('ul#pantryList').append('<li><span class='pantry'>' + newPantryEntry.expandList + '</span></li>'); //should this be in the submit function or outside immediately following?
+  });
+
+
 
 
 
