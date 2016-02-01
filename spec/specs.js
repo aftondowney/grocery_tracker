@@ -11,7 +11,7 @@
 describe('Pantry', function() {
   it("creates a new list of items already existing in users pantry", function() {
     var testPantry = new Pantry ("banana", 3);
-    expect(testPantry.itemName).to.equal("banana");
+    expect(testPantry.pantryName).to.equal("banana");
     expect(testPantry.pantryQuantity).to.equal(3);
   });
 
@@ -31,7 +31,12 @@ describe('Pantry', function() {
 describe('Shopping', function() {
   it("creates a new shopping list of items the user needs to buy", function () {
     var testShopping = new Shopping ("oats", 5);
-    expect(testShopping.itemName).to.equal("oats");
+    expect(testShopping.shopName).to.equal("oats");
     expect(testShopping.shopQuantity).to.equal(5);
+  })
+
+  it("applies the shopping expand method to any new shop entry", function() {
+    var testShopping = new Shopping ("scallops", 12);
+    expect(testShopping.expandList()).to.equal("scallops x12")
   })
 })

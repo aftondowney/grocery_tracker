@@ -5,14 +5,18 @@
 //   this.shopping = [];
 // }
 
-function Pantry(itemName, pantryQuantity) {
-  this.itemName = itemName;
+function Pantry(pantryName, pantryQuantity) {
+  this.pantryName = pantryName;
   this.pantryQuantity = pantryQuantity;
 }
 
-function Shopping(itemName, shopQuantity) {
-  this.itemName = itemName;
+function Shopping(shopName, shopQuantity) {
+  this.shopName = shopName;
   this.shopQuantity = shopQuantity;
+}
+
+Shopping.prototype.expandList = function(){
+  return this.shopName + " x" + this.shopQuantity;
 }
 
 Pantry.prototype.itemIncrease = function(item){
@@ -26,13 +30,15 @@ Pantry.prototype.itemDecrease = function(item){
 }
 
 $(document).ready(function() {
-  $("form#shopping").submit(function(event) {
+  $("form#shoppingSubmit").submit(function(event) {
     var shoppingList = [];
     var shopItem = $("input#shopItem").val();
     var shopQuantity = $("input#shopQuantity").val();
     var newShopEntry = new Shopping(shopItem, shopQuantity);
-    newShopEntry.push
+    shoppingList.push(newShopEntry);
+  });
 
+  // $('ul#shoppingList').append('<li><span class='shopping'>' + ITEMENTRY + 'x' + ITEMQUANTITY + '</span></li>')
 
 
 
