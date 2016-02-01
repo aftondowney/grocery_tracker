@@ -19,6 +19,12 @@ describe('Pantry', function() {
     var testPantry = new Pantry ("banana", 3);
     expect(testPantry.itemIncrease(2)).to.equal(5);
   })
+
+
+  it ("will decrease item quantity of pantry based on user input", function() {
+    var testPantry = new Pantry ("banana", 5);
+    expect(testPantry.itemDecrease(4)).to.equal(1);
+  })
 });
 
 describe('Shopping', function() {

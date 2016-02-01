@@ -19,3 +19,8 @@ Pantry.prototype.itemIncrease = function(item){
   var itemsPurchased = item;
     return this.itemQuantity += itemsPurchased;
 }
+
+Pantry.prototype.itemDecrease = function(item){
+  var itemsPurchased = item;
+    return this.itemQuantity -= itemsPurchased;
+}
