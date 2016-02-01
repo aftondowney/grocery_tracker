@@ -12,3 +12,8 @@ function Pantry(itemName, itemQuantity, itemUsage, itemExpiration) {
   this.itemUsage = itemUsage;
   this.itemExpiration = itemExpiration;
 }
+
+function Shopping(itemName, itemQuantity) {
+  this.itemName = itemName;
+  this.itemQuantity = itemQuantity;
+}

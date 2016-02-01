@@ -19,4 +19,10 @@ describe('Pantry', function() {
   });
 });
 
-describe()
+describe('Shopping', function() {
+  it("creates a new shopping list of items the user needs to buy", function () {
+    var testShopping = new Shopping ("oats", 5);
+    expect(testShopping.itemName).to.equal("oats");
+    expect(testShopping.itemQuantity).to.equal(5);
+  })
+})
