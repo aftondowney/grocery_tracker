@@ -22,28 +22,30 @@ function resetFields() {
 
 
 $(document).ready(function() {
-  $("#shoppingList").click(function() {
+  $("#shoppingButton").click(function() {
+    $("#shoppingButton").hide();
 
-    $("#shoppingList").append('<div class="form-group">' +
+    $("#shopping").append('<div class="form-group">' +
                        '<label for="new-item">Item Name</label>' +
                        '<input type="text" class="form-control" id="new-item">' +
                        '</div>' +
                        '<div class="form-group">' +
                        '<label for="new-quantity">Item Quantity</label>' +
                        '<input type="text" class="form-control" id="new-quantity">' +
-                       '</div>' + '<button type="submit" class="btn" id="shoppingSubmit">Add</button>');
+                       '</div>' + '<button type="submit" class="btn" id="shoppingSubmit">Add to Shopping List</button>');
   });
 
- $("#pantryList").click(function() {
+ $("#pantryButton").click(function() {
+   $("#pantryButton").hide();
 
-   $("#pantryList").append('<div class="form-group">' +
+   $("#pantry").append('<div class="form-group">' +
                       '<label for="new-item">Item Name</label>' +
                       '<input type="text" class="form-control" id="new-item">' +
                       '</div>' +
                       '<div class="form-group">' +
                       '<label for="new-quantity">Item Quantity</label>' +
                       '<input type="text" class="form-control" id="new-quantity">' +
-                      '</div>' + '<button type="submit" class="btn" id="pantrySubmit">Add</button>');
+                      '</div>' + '<button type="submit" class="btn" id="pantrySubmit">Add to Pantry List</button>');
 
   });
 });
