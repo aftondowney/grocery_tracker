@@ -1,13 +1,3 @@
-// describe('User', function() {
-//   it("creates a new user with given inputs", function() {
-//     var testUser = new User ("Tina", "turner@gmail.com");
-//     expect(testUser.firstName).to.equal("Tina");
-//     expect(testUser.email).to.equal("turner@gmail.com");
-//     expect(testUser.pantry).to.eql([]);
-//     expect(testUser.shopping).to.eql([]);
-//   });
-// });
-
 describe('Pantry', function() {
   it("creates a new list of items already existing in users pantry", function() {
     var testPantry = new Pantry ("banana", 3);
@@ -25,7 +15,6 @@ describe('Pantry', function() {
     var testPantry = new Pantry ("banana", 5);
     expect(testPantry.itemDecrease(4)).to.equal(1);
   })
-
 });
 
 describe('Shopping', function() {
