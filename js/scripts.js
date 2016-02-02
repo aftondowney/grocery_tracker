@@ -46,7 +46,7 @@ $(document).ready(function() {
 
     $("ul#shoppingList li").last().click(function() {
       $(this).wrap("<strike>");
-      // $('ul#pantryList').append("<li><span class='pantry'>" + this + "</span></li>");
+      $('ul#pantryList').append("<li><span class='pantry'>" + $(this.newShopEntry) + "</span></li>"); //presently returns [object Object]
     });
   });
 

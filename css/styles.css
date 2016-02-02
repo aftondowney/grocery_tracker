@@ -11,10 +11,12 @@
   display: none;
 }
 
-.strikethru {
-  text-decoration: line-through;
+#shoppingList, #pantryList {
+  margin-top: 15px;
 }
 
-#shoppingList {
-  margin-top: 15px;
+.jumbotron {
+  background-image: url("http://www.kcet.org/living/food/assets/images/P1230083.JPG");
+  background-size: 100%;
+
 }
