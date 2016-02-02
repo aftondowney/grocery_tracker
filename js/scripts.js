@@ -40,7 +40,10 @@ function resetFields() {
 $(document).ready(function() {
   $("#shoppingButton").click(function() {
     $("#shoppingButton").hide();
-
+    $("#shoppingForm").show();
+    $("#pantryButton").click(function() {
+    $("#pantryButton").hide();
+    $("#pantryForm").show();
   });
 
 
@@ -55,39 +58,18 @@ $(document).ready(function() {
      $('ul#shoppingList').append("<li><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span></li>');
 
      resetFields();
-  });
 
-  $("#pantryButton").click(function() {
-    $("#pantryButton").hide();
-
-  });
-
-  $("form#pantryForm").submit(function(event) {
+     $('ul#shoppingList').append("<li><span class='shopping'>" + shopItem + " " + "x" + shopQuantity + "</span></li>"); //should this be in the submit function or outside immediately following?
 
 
-    var pantryList = [];
-    var pantryItem = $("input#pantryItem").val();
-    var pantryQuantity = $("#pantryQuantity").val();
-    var notePantry = $("textarea#notePantry").val();
-    var newPantryEntry = new Pantry(pantryItem, pantryQuantity, notePantry);
-    pantryList.push(newPantryEntry);
-    $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " x" + '<span class="quantity">' + pantryQuantity + '<span class="buttons"></span></span>' + "(" + notePantry + ")" + '</span></li>');
-    console.log(newPantryEntry);
-
-    resetFields();
-
-    // $("ul#pantryList li").find(".quantity").click(function(){ BEGINNING OF COUNT UP/DOWN BUTTONS
-
-      $(this).find(".buttons").html('<span class="btn btn-danger" id="minus">' + '-' + '</span>' + '<span class="btn btn-success" id="plus">' + '+' + '</span>');
-
-
+    $("ul#shoppingList li").last().click(function() {
+      $(this).wrap("<strike>");
+      console.log(newShopEntry);
+        $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " x" + '<span class="quantity">' + pantryQuantity + '<span class="buttons"></span></span>' + "(" + notePantry + ")" + '</span></li>');
     });
 
 
-
-    event.preventDefault();
-  });
-
-
-
-});
+    $("ul#pantryList li").find(".quantity").click(function(){  //BEGINNING OF COUNT UP/DOWN BUTTONS
+      $(this).find(".buttons").html('<span class="btn btn-danger" id="minus">' + '-' + '</span>' + '<span class="btn btn-success" id="plus">' + '+' + '</span>');
+    });
+  });    
