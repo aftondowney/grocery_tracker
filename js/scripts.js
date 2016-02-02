@@ -11,11 +11,11 @@ function Shopping(shopName, shopQuantity, noteShopping) {
 }
 
 Shopping.prototype.expandList = function(){
-  return this.shopName + "  x" + this.shopQuantity + " (" + this.noteShopping + ")";
+  return this.shopName + " x" + this.shopQuantity + " (" + this.noteShopping + ")";
 }
 
 Pantry.prototype.expandList = function(){
-  return this.pantryName + "  x" + this.pantryQuantity + " (" + this.notePantry + ")";
+  return this.pantryName + " x" + this.pantryQuantity + " (" + this.notePantry + ")";
 }
 
 Pantry.prototype.itemIncrease = function(item){
@@ -33,8 +33,8 @@ function resetFields() {
   $("input#shopQuantity").val("");
   $("input#pantryItem").val("");
   $("input#pantryQuantity").val("");
-  $("input#notePantry").val("");
-  $("input#noteShopping").val("");
+  $("textarea#notePantry").val("");
+  $("textarea#noteShopping").val("");
 }
 
 $(document).ready(function() {
@@ -52,7 +52,7 @@ $(document).ready(function() {
     var noteShopping = $("textarea#noteShopping").val();
     var newShopEntry = new Shopping(shopItem, shopQuantity, noteShopping);
      shoppingList.push(newShopEntry);
-     $('ul#shoppingList').append("<li><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span></li>');
+     $('ul#shoppingList').html("<li><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span></li>');
 
      resetFields();
   });
@@ -67,7 +67,7 @@ $(document).ready(function() {
 
     var pantryList = [];
     var pantryItem = $("input#pantryItem").val();
-    var pantryQuantity = $("#pantryQuantity").val();
+    var pantryQuantity = parseInt($("#pantryQuantity").val());
     var notePantry = $("textarea#notePantry").val();
     var newPantryEntry = new Pantry(pantryItem, pantryQuantity, notePantry);
     pantryList.push(newPantryEntry);
@@ -78,11 +78,20 @@ $(document).ready(function() {
 
     $("ul#pantryList li").find(".quantity").click(function(){ //BEGINNING OF COUNT UP/DOWN BUTTONS
 
-      $(this).find(".buttons").html('<span class="btn btn-danger" id="-">' + '-' + '</span>' + '<span class="btn btn-success" id="+">' + '+' + '</span>');
+      $(this).find(".buttons").html('<span class="btn btn-danger" id="minus">' + '-' + '</span>' + '<span class="btn btn-success" id="plus">' + '+' + '</span>');
 
-      
+
+      $("#minus").click(function(){
+        if (pantryQuantity > 0){
+          this.pantryQuantity.replace(pantryQuantity -= 1); //HOW TO DOOOOOOOOOO
+        }
+
+
+      });
+
+
     });
-    $("")
+
 
 
 

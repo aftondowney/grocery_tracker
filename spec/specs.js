@@ -25,7 +25,7 @@ describe('Shopping', function() {
   })
 
   it("applies the shopping expand method to any new shop entry", function() {
-    var testShopping = new Shopping ("scallops", 12);
-    expect(testShopping.expandList()).to.equal("scallops x12")
+    var testShopping = new Shopping ("scallops", 12, "yum");
+    expect(testShopping.expandList()).to.equal("scallops x12 (yum)")
   })
-})
+});
