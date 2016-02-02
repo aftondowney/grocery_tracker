@@ -76,7 +76,7 @@ $(document).ready(function() {
 
     resetFields();
 
-    $("ul#pantryList li").find(".quantity").click(function(){ //BEGINNING OF COUNT UP/DOWN BUTTONS
+    // $("ul#pantryList li").find(".quantity").click(function(){ BEGINNING OF COUNT UP/DOWN BUTTONS
 
       $(this).find(".buttons").html('<span class="btn btn-danger" id="minus">' + '-' + '</span>' + '<span class="btn btn-success" id="plus">' + '+' + '</span>');
 
