@@ -1,6 +1,6 @@
 .btn-first {
   border: 3px solid black;
-  border-radius: 10px;
+  border-radius: 0.50px;
   height: 75px;
   text-align: center;
   font-size: 45px;
@@ -20,7 +20,18 @@ li:hover {
 }
 
 .jumbotron {
-  background-image: url("http://cdx.dexigner.com/article/19969/Impact_Fridge_gallery.jpg");
+  background-image: url(../images/miniFridge.jpg);
   background-size: 100%;
+  color: #003d66;
 
+}
+
+#jumbo {
+  text-shadow: -0.5px 0 #d9d9d9, 0 0.5px #d9d9d9, 0.5px 0 #d9d9d9, 0 -0.5px #d9d9d9;
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
+}
+
+#littleJumbo {
+  text-shadow: -0.5px 0 #a6a6a6, 0 0.5px #a6a6a6, 0.5px 0 #a6a6a6, 0 -0.5px #a6a6a6;
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
 }

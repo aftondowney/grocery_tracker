@@ -47,7 +47,7 @@ $(document).ready(function() {
     $("ul#shoppingList li").last().click(function() {
       $(this).wrap("<strike>");
       console.log(newShopEntry);
-      $('ul#pantryList').append("<li><span class='pantry'>" + shopItem + " " + "x" + shopQuantity + "</span></li>"); //presently returns [object Object]
+      $('ul#pantryList').append("<li><span class='pantry'>" + shopItem + " " + "x" + shopQuantity + "</span></li>");
     });
   });
 
@@ -84,8 +84,19 @@ $(document).ready(function() {
     var pantryQuantity = $("input#pantryQuantity").val();
     var newPantryEntry = new Pantry(pantryItem, pantryQuantity);
     pantryList.push(newPantryEntry);
-    $('ul#pantryList').append("<li><span class='pantry'>" + newPantryEntry.expandList() + "</span></li>"); //should this be in the submit function or outside immediately following?
+    $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " " + "x" + pantryQuantity + "</span></li>"); //should this be in the submit function or outside immediately following?
     event.preventDefault();
+
+    $('ul#pantryList li').click(function() {
+      $(this).append('<span class="btn btn-success" id="plus">' + '+' + '</span>' + '<span class="btn btn-danger" id="minus">' + '-' + '</span>');
+      event.stopPropagation();
+    });
+
+    $('span#plus').click(function(e) {
+      this.pantryQuantity + 1;
+      event.stopPropagation();
+
+    });
   });
 
 
