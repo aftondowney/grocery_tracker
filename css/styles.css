@@ -10,3 +10,11 @@
 #shoppingForm, #pantryForm {
   display: none;
 }
+
+.strikethru {
+  text-decoration: line-through;
+}
+
+#shoppingList {
+  margin-top: 15px;
+}

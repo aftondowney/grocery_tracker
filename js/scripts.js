@@ -35,7 +35,6 @@ $(document).ready(function() {
 
 
   $("form#shoppingForm").submit(function(event) {
-    debugger;
     event.preventDefault();
     var shoppingList = [];
     var shopItem = $("input#shopItem").val();
@@ -44,7 +43,32 @@ $(document).ready(function() {
      shoppingList.push(newShopEntry);
      $('ul#shoppingList').append("<li><span class='shopping'>" + newShopEntry.expandList() + "</span></li>"); //should this be in the submit function or outside immediately following?
 
+
+    $("ul#shoppingList li").last().click(function() {
+      $(this).wrap("<strike>");
+      // $('ul#pantryList').append("<li><span class='pantry'>" + this + "</span></li>");
+    });
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   $("#pantryButton").click(function() {
     $("#pantryButton").hide();
