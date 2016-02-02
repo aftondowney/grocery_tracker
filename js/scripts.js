@@ -45,6 +45,7 @@ $(document).ready(function() {
 
 
   $("form#shoppingForm").submit(function(event) {
+
     event.preventDefault();
     var shoppingList = [];
     var shopItem = $("input#shopItem").val();
@@ -52,10 +53,21 @@ $(document).ready(function() {
     var noteShopping = $("textarea#noteShopping").val();
     var newShopEntry = new Shopping(shopItem, shopQuantity, noteShopping);
      shoppingList.push(newShopEntry);
-     $('ul#shoppingList').html("<li><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span></li>');
+     $('ul#shoppingList').append("<li><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' +     '<input type="submit" class="edit" value="Edit">' + '<input type="submit" class="done delete" value="Delete">' + '</li>');
 
-     resetFields();
-  });
+
+         resetFields();
+
+           $('ul#shoppingList').on('click', '.edit', function(){
+             $(this).parent().attr('contenteditable', 'true');
+           });
+
+           $('ul#shoppingList').on('click', '.delete', function(){
+             $(this).parent().remove();
+           });
+
+         });
+
 
   $("#pantryButton").click(function() {
     $("#pantryButton").hide();
@@ -63,6 +75,7 @@ $(document).ready(function() {
   });
 
   $("form#pantryForm").submit(function(event) {
+        event.preventDefault();
 
 
     var pantryList = [];
@@ -71,36 +84,34 @@ $(document).ready(function() {
     var notePantry = $("textarea#notePantry").val();
     var newPantryEntry = new Pantry(pantryItem, pantryQuantity, notePantry);
     pantryList.push(newPantryEntry);
-    $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " x" + '<span class="quantity">' + pantryQuantity + '<span class="buttons"></span></span>' + "(" + notePantry + ")" + '</span></li>');
+    $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " x" +  + pantryQuantity + "(" + notePantry + ")" + '</span>' + '<input type="submit" class="edit" value="Edit">' + '<input type="submit" class="done delete" value="Delete">' + '</li>');
     console.log(newPantryEntry);
+
 
     resetFields();
 
-    $("ul#pantryList li").find(".quantity").click(function(){ //BEGINNING OF COUNT UP/DOWN BUTTONS
-
-      $(this).find(".buttons").html('<span class="btn btn-danger" id="minus">' + '-' + '</span>' + '<span class="btn btn-success" id="plus">' + '+' + '</span>');
-
-
-      $("#minus").click(function(){
-        if (pantryQuantity > 0){
-          this.pantryQuantity.replace(pantryQuantity -= 1); //HOW TO DOOOOOOOOOO
-        }
-
-
+      $('ul#pantryList').on('click', '.edit', function(){
+        $(this).parent().attr('contenteditable', 'true');
       });
 
+      $('ul#pantryList').on('click', '.delete', function(){
+        $(this).parent().remove();
+      });
 
     });
 
 
-
-
-    event.preventDefault();
   });
 
 
 
-});
+
+
+
+
+
+
+
 
 
 
