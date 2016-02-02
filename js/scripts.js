@@ -28,8 +28,8 @@ Pantry.prototype.itemDecrease = function(item){
 
 $(document).ready(function() {
   $("#shoppingButton").click(function() {
-    debugger;
     $("#shoppingButton").hide();
+    $("#shoppingForm").show();
 
   });
 
@@ -48,14 +48,12 @@ $(document).ready(function() {
 
   $("#pantryButton").click(function() {
     $("#pantryButton").hide();
-
-
+    $("#pantryForm").show();
   });
 
 
 
   $("form#pantryForm").submit(function(event) {
-
     var pantryList = [];
     var pantryItem = $("input#pantryItem").val();
     var pantryQuantity = $("input#pantryQuantity").val();
