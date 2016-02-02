@@ -53,7 +53,7 @@ $(document).ready(function() {
     var noteShopping = $("textarea#noteShopping").val();
     var newShopEntry = new Shopping(shopItem, shopQuantity, noteShopping);
      shoppingList.push(newShopEntry);
-     $('ul#shoppingList').append("<li><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' +     '<input type="submit" class="edit" value="Edit">' + '<input type="submit" class="done delete" value="Delete">' + '</li>');
+     $('ul#shoppingList').append("<li><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' +     '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>');
 
 
          resetFields();
@@ -84,7 +84,7 @@ $(document).ready(function() {
     var notePantry = $("textarea#notePantry").val();
     var newPantryEntry = new Pantry(pantryItem, pantryQuantity, notePantry);
     pantryList.push(newPantryEntry);
-    $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " x" +  + pantryQuantity + "(" + notePantry + ")" + '</span>' + '<input type="submit" class="edit" value="Edit">' + '<input type="submit" class="done delete" value="Delete">' + '</li>');
+    $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " x" +  + pantryQuantity + "(" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>');
     console.log(newPantryEntry);
 
 
