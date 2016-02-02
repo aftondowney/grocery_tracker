@@ -9,11 +9,11 @@ function Shopping(shopName, shopQuantity) {
 }
 
 Shopping.prototype.expandList = function(){
-  return this.shopName + " x" + this.shopQuantity;
+  return this.shopName + "  x" + this.shopQuantity;
 }
 
 Pantry.prototype.expandList = function(){
-  return this.pantryName + " x" + this.pantryQuantity;
+  return this.pantryName + "  x" + this.pantryQuantity;
 }
 
 Pantry.prototype.itemIncrease = function(item){
@@ -27,66 +27,61 @@ Pantry.prototype.itemDecrease = function(item){
 }
 
 $(document).ready(function() {
-  $("form#shoppingSubmit").submit(function(event) {
+  $("#shoppingButton").click(function() {
+    debugger;
+    $("#shoppingButton").hide();
+
+  });
+
+
+  $("form#shoppingForm").submit(function(event) {
+    debugger;
+    event.preventDefault();
     var shoppingList = [];
     var shopItem = $("input#shopItem").val();
     var shopQuantity = $("input#shopQuantity").val();
     var newShopEntry = new Shopping(shopItem, shopQuantity);
-    shoppingList.push(newShopEntry);
-    $('ul#shoppingList').append('<li><span class='shopping'>' + newShopEntry.expandList + '</span></li>'); //should this be in the submit function or outside immediately following?
+     shoppingList.push(newShopEntry);
+     $('ul#shoppingList').append("<li><span class='shopping'>" + newShopEntry.expandList() + "</span></li>"); //should this be in the submit function or outside immediately following?
+
   });
 
-  $("form#pantrySubmit").submit(function(event) {
+  $("#pantryButton").click(function() {
+    $("#pantryButton").hide();
+
+
+  });
+
+
+
+  $("form#pantryForm").submit(function(event) {
+
     var pantryList = [];
     var pantryItem = $("input#pantryItem").val();
     var pantryQuantity = $("input#pantryQuantity").val();
     var newPantryEntry = new Pantry(pantryItem, pantryQuantity);
     pantryList.push(newPantryEntry);
-    $('ul#pantryList').append('<li><span class='pantry'>' + newPantryEntry.expandList + '</span></li>'); //should this be in the submit function or outside immediately following?
+    $('ul#pantryList').append("<li><span class='pantry'>" + newPantryEntry.expandList() + "</span></li>"); //should this be in the submit function or outside immediately following?
+    event.preventDefault();
   });
 
 
 
+    //
+    //
+    //
+    // var itemsPurchased = Shopping.shopQuantity;
 
 
-
-    var itemsPurchased = Shopping.shopQuantity;
-
-     event.preventDefault();
-  })
-
-
-function resetFields() {
-  $("input#new-item").val("");
-  $("textarea#new-quantity").val("");
-}
-
-
-$(document).ready(function() {
-  $("#shoppingButton").click(function() {
-    $("#shoppingButton").hide();
-
-    $("#shopping").append('<div class="form-group">' +
-                       '<label for="new-item">Item Name</label>' +
-                       '<input type="text" class="form-control" id="new-item">' +
-                       '</div>' +
-                       '<div class="form-group">' +
-                       '<label for="new-quantity">Item Quantity</label>' +
-                       '<input type="text" class="form-control" id="new-quantity">' +
-                       '</div>' + '<button type="submit" class="btn" id="shoppingSubmit">Add to Shopping List</button>');
   });
 
- $("#pantryButton").click(function() {
-   $("#pantryButton").hide();
-
-   $("#pantry").append('<div class="form-group">' +
-                      '<label for="new-item">Item Name</label>' +
-                      '<input type="text" class="form-control" id="new-item">' +
-                      '</div>' +
-                      '<div class="form-group">' +
-                      '<label for="new-quantity">Item Quantity</label>' +
-                      '<input type="text" class="form-control" id="new-quantity">' +
-                      '</div>' + '<button type="submit" class="btn" id="pantrySubmit">Add to Pantry List</button>');
-
-  });
-});
+//
+// function resetFields() {
+//   $("input#new-item").val("");
+//   $("textarea#new-quantity").val("");
+// }
+//
+//
+//
+//
+// });
