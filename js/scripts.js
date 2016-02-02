@@ -41,12 +41,13 @@ $(document).ready(function() {
     var shopQuantity = $("input#shopQuantity").val();
     var newShopEntry = new Shopping(shopItem, shopQuantity);
      shoppingList.push(newShopEntry);
-     $('ul#shoppingList').append("<li><span class='shopping'>" + newShopEntry.expandList() + "</span></li>"); //should this be in the submit function or outside immediately following?
+     $('ul#shoppingList').append("<li><span class='shopping'>" + shopItem + " " + "x" + shopQuantity + "</span></li>"); //should this be in the submit function or outside immediately following?
 
 
     $("ul#shoppingList li").last().click(function() {
       $(this).wrap("<strike>");
-      $('ul#pantryList').append("<li><span class='pantry'>" + $(this.newShopEntry) + "</span></li>"); //presently returns [object Object]
+      console.log(newShopEntry);
+      $('ul#pantryList').append("<li><span class='pantry'>" + shopItem + " " + "x" + shopQuantity + "</span></li>"); //presently returns [object Object]
     });
   });
 

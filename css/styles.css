@@ -15,8 +15,12 @@
   margin-top: 15px;
 }
 
+li:hover {
+  cursor: pointer;
+}
+
 .jumbotron {
-  background-image: url("http://www.kcet.org/living/food/assets/images/P1230083.JPG");
+  background-image: url("http://cdx.dexigner.com/article/19969/Impact_Fridge_gallery.jpg");
   background-size: 100%;
 
 }
