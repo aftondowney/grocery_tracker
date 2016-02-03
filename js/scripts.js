@@ -77,7 +77,7 @@ $(document).ready(function() {
 
       $("span.shopping").last().click(function() {
       $(this).wrap("<strike>");
-      $('ul#pantryList').append("<li><span class='pantry'>" + shopItem + " x" + '<span class="quantity">' + shopQuantity  + "(" + noteShopping + ")" + '</span></li>');
+      $('ul#pantryList').append("<li><span class='pantry'>" + shopItem + " x" + '<span class="quantity">' + shopQuantity  + " (" + noteShopping + ")" + '</span></li>');
     }); //transfer shopping list item to pantry
   });
 
@@ -97,7 +97,7 @@ $(document).ready(function() {
 
     $("span.shopping").last().click(function() {
     $(this).wrap("<strike>");
-      $('ul#shoppingList').append("<li><span class='pantry'>" + pantryItem + " x" + '<span class="quantity">' + pantryQuantity  + "(" + notePantry + ")" + '</span></li>'); //sends pantry item to shopping list
+      $('ul#shoppingList').append("<li><span class='pantry'>" + pantryItem + " x" + '<span class="quantity">' + pantryQuantity  + " (" + notePantry + ")" + '</span></li>'); //sends pantry item to shopping list
     });
 
       $('ul#pantryList').on('click', '.edit', function(){

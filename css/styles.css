@@ -5,7 +5,7 @@
   font-size: 40px;
   border-spacing: inherit;
   background-color: #88c0c3;
-  text-shadow: -0.5px 0 #d9d9d9, 0 0.5px #d9d9d9, 0.5px 0 #d9d9d9, 0 -0.5px #d9d9d9;
+  text-shadow: -0.5px 0 #a6a6a6, 0 0.5px #a6a6a6, 0.5px 0 #a6a6a6, 0 -0.5px #a6a6a6;
   font-family: Geneva, Tahoma, Verdana, sans-serif;
   color: #003d66;
 }
@@ -14,8 +14,21 @@ body {
   background-color: #a6a6a6;
 }
 
+button[type="submit"] {
+  background-color: #88c0c3;
+  color: #003d66;
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
+}
+
+label, li {
+    color: #003d66;
+    font-family: Geneva, Tahoma, Verdana, sans-serif;
+}
+
 .form-control {
   background-color : #F1F1F1;
+  color: #003d66;
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
 }
 
 #shoppingForm, #pantryForm {
@@ -36,7 +49,7 @@ li:hover {
   color: #003d66;
   background-repeat: no-repeat;
   background-position: bottom;
-  text-indent: 90px;
+  text-indent: 97px;
 }
 
 #jumbo {
