@@ -42,10 +42,11 @@ $(document).ready(function() {
     $("#shoppingButton").hide();
     $("#shoppingForm").show();
   });
-    $("#pantryButton").click(function() {
+  $("#pantryButton").click(function() {
     $("#pantryButton").hide();
     $("#pantryForm").show();
   });
+
 
 
   $("form#shoppingForm").submit(function(event) {
@@ -58,6 +59,9 @@ $(document).ready(function() {
     var newShopEntry = new Shopping(shopItem, shopQuantity, noteShopping);
     shoppingList.push(newShopEntry);
     $('ul#shoppingList').append("<li><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>'); //this creates a new shopping list item with note.
+
+    //  shoppingList.push(newShopEntry);
+    //   $('ul#shoppingList').append('<li><span class="shopping">' + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" +  '</span>' + '<span class="btn-sm btn-default" id="edit">' + 'edit' + '</span>' + '<span class="btn-sm btn-default" id="delete">' + 'delete' + '</span></li>'); USE TO REWORK EDIT/DELETE BUTTONS
 
     resetFields();
 
@@ -106,4 +110,6 @@ $(document).ready(function() {
 
 
   });
-});
+
+
+  });
