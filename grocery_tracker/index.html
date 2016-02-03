@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fridge</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+          <h1 id="jumbo">What's In Your Fridge?</h1>
+          <h2 id="littleJumbo">Keep track of what you have and what you need in your fridge and pantry.</h2>
+        </div>
+      <div class="row">
+        <div class="col-sm-6" >
+          <div id="shopping">
+            <span class="btn btn-first" id="shoppingButton">Add to Shopping List</span>
+            <form id="shoppingForm">
+              <div class="form-group">
+                <label for="shopItem">Item Name</label>
+                <input type="text" class="form-control" id="shopItem">
+              </div>
+              <div class="form-group">
+                <label for="shopQuantity">Item Quantity</label>
+                  <input type="text" class="form-control" id="shopQuantity">
+              </div>
+              <div class="form-group">
+                <label for="noteShopping">Notes</label>
+                <textarea class="form-control" id="noteShopping"></textarea>
+              </div>
+                <button type="submit" class="btn" id="shoppingSubmit">Add to Shopping List</button>
+            </form>
+          </div>
+        <ul id="shoppingList">
+        </ul>
+        </div>
+        <div class="col-sm-6">
+          <div id="pantry">
+            <span class="btn btn-first" id="pantryButton">Add to Pantry List</span>
+            <form id="pantryForm">
+              <div class="form-group">
+                <label for="pantryItem">Item Name</label>
+                <input type="text" class="form-control" id="pantryItem">
+              </div>
+              <div class="form-group">
+                <label for="pantryQuantity">Item Quantity</label>
+                  <input type="text" class="form-control" id="pantryQuantity">
+              </div>
+              <div class="form-group">
+                <label for="notePantry">Notes</label>
+                <textarea class="form-control" id="notePantry"></textarea>
+              </div>
+                <button type="submit" class="btn" id="pantrySubmit">Add to Pantry</button>
+            </form>
+            <ul id="pantryList">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

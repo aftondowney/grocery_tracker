@@ -1,0 +1,46 @@
+.btn-first {
+  border-radius: 10px;
+  height: 75px;
+  text-align: center;
+  font-size: 45px;
+  border-spacing: inherit;
+  background-color: #AEE1E4;
+}
+
+
+#shoppingForm, #pantryForm {
+  display: none;
+}
+
+#shoppingList, #pantryList {
+  margin-top: 15px;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+.jumbotron {
+  background-image: url(../images/fridge.jpg);
+  background-size: 100%;
+  color: #003d66;
+  background-repeat: no-repeat;
+  background-position: right;
+  z-index: 1;
+}
+
+#jumbo {
+  text-shadow: -0.5px 0 #d9d9d9, 0 0.5px #d9d9d9, 0.5px 0 #d9d9d9, 0 -0.5px #d9d9d9;
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+#littleJumbo {
+  text-shadow: -0.5px 0 #a6a6a6, 0 0.5px #a6a6a6, 0.5px 0 #a6a6a6, 0 -0.5px #a6a6a6;
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
+}
+
+.edit {
+  margin: 14px 14px 14px 14px;
+}
