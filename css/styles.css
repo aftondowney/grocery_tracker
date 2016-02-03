@@ -1,11 +1,12 @@
 .btn-first {
-  border: 3px solid black;
-  border-radius: 0.50px;
+  border-radius: 10px;
   height: 75px;
   text-align: center;
   font-size: 45px;
   border-spacing: inherit;
+  background-color: #AEE1E4;
 }
+
 
 #shoppingForm, #pantryForm {
   display: none;
@@ -20,7 +21,7 @@ li:hover {
 }
 
 .jumbotron {
-  background-image: url(../images/miniFridge.jpg);
+  background-image: url(../images/fridge.jpg);
   background-size: 100%;
   color: #003d66;
 
@@ -34,4 +35,7 @@ li:hover {
 #littleJumbo {
   text-shadow: -0.5px 0 #a6a6a6, 0 0.5px #a6a6a6, 0.5px 0 #a6a6a6, 0 -0.5px #a6a6a6;
   font-family: Geneva, Tahoma, Verdana, sans-serif;
+
+.edit {
+  margin: 14px 14px 14px 14px;
 }
