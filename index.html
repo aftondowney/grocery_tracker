@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     </head>
@@ -15,8 +16,10 @@
       <h2 id="littleJumbo">Keep track of what you have and what you need in your fridge and pantry.</h2>
     </div>
     <div class="container">
+
       <div class="row">
         <div class="col-sm-6" >
+
           <div id="shopping">
             <span class="btn btn-lg btn-first center-block" id="shoppingButton">Add to Shopping List</span>
             <form id="shoppingForm">
@@ -35,9 +38,9 @@
                 <button type="submit" class="btn" id="shoppingSubmit">Add to Shopping List</button>
             </form>
           </div>
-        <ul id="shoppingList">
-        </ul>
-        </div>
+          <ul id="shoppingList">
+          </ul>
+      </div>
         <div class="col-sm-6">
           <div id="pantry">
             <span class="btn btn-first center-block" id="pantryButton">Add to Pantry List</span>
@@ -55,13 +58,14 @@
                 <textarea class="form-control" id="notePantry"></textarea>
               </div>
                 <button type="submit" class="btn" id="pantrySubmit">Add to Pantry List</button>
+
             </form>
             <ul id="pantryList">
             </ul>
-          </div>
         </div>
       </div>
     </div>
+
     <div id="footer">
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#fridgeLayoutPic">Fridge Layout Tips</button>
@@ -102,5 +106,7 @@
         </div>
       </div>
     </div>
+  </div>
+
   </body>
 </html>
