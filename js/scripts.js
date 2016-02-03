@@ -58,7 +58,7 @@ $(document).ready(function() {
     var noteShopping = $("textarea#noteShopping").val();
     var newShopEntry = new Shopping(shopItem, shopQuantity, noteShopping);
     shoppingList.push(newShopEntry);
-    $('ul#shoppingList').append("<li><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>'); //this creates a new shopping list item with note.
+    $('ul#shoppingList').append("<li><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' + '<input type="submit" class="edit btn btn-sm" value="Edit">' + '<input type="submit" class="done delete btn btn-sm" value="Delete">' + '</button>' + ' ' + '<button type="button" class="btn btn-sm arrow" aria-label="Left Align">' + '<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>' + '</li>'); //this creates a new shopping list item with note.
 
     //  shoppingList.push(newShopEntry);
     //   $('ul#shoppingList').append('<li><span class="shopping">' + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" +  '</span>' + '<span class="btn-sm btn-default" id="edit">' + 'edit' + '</span>' + '<span class="btn-sm btn-default" id="delete">' + 'delete' + '</span></li>'); USE TO REWORK EDIT/DELETE BUTTONS
@@ -75,8 +75,7 @@ $(document).ready(function() {
 
      resetFields();
 
-      $("span.shopping").last().click(function() {
-      $(this).wrap("<strike>");
+      $("span.glyphicon-arrow-right").last().click(function() {
       $('ul#pantryList').append("<li><span class='pantry'>" + shopItem + " x" + '<span class="quantity">' + shopQuantity  + " (" + noteShopping + ")" + '</span></li>');
     }); //transfer shopping list item to pantry
   });
@@ -91,12 +90,11 @@ $(document).ready(function() {
     var notePantry = $("textarea#notePantry").val();
     var newPantryEntry = new Pantry(pantryItem, pantryQuantity, notePantry);
     pantryList.push(newPantryEntry);
-    $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " x" + pantryQuantity + " (" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>');
+    $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " x" + pantryQuantity + " (" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn btn-sm" value="Edit">' + '<input type="submit" class="done delete btn btn-sm" value="Delete">' + '</button>' + ' ' + '<button type="button" class="btn btn-sm arrow" aria-label="Left Align">' + '<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>' + '</buton>' + '</li>');
       //look into making buttons smaller? diff color?
     resetFields();
 
-    $("span.shopping").last().click(function() {
-    $(this).wrap("<strike>");
+    $("span.glyphicon-arrow-left").last().click(function() {
       $('ul#shoppingList').append("<li><span class='pantry'>" + pantryItem + " x" + '<span class="quantity">' + pantryQuantity  + " (" + notePantry + ")" + '</span></li>'); //sends pantry item to shopping list
     });
 
@@ -108,4 +106,36 @@ $(document).ready(function() {
         $(this).parent().remove(); //makes edit/delete work
       });
     });
-  });
+
+
+///sticky footer test
+
+    $(window).bind("load", function() {
+      var footerHeight = 0,
+       footerTop = 0,
+       $footer = $("#footer");
+
+       positionFooter();
+
+      function positionFooter() {
+
+        footerHeight = $footer.height();
+        footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+       if ( ($(document.body).height()+footerHeight) < $(window).height()) {
+           $footer.css({
+                position: "absolute"
+           }).animate({
+                top: footerTop
+           })
+       } else {
+           $footer.css({
+                position: "static"
+           })
+       }
+  }
+       $(window)
+               .scroll(positionFooter)
+               .resize(positionFooter)
+
+   });
+});

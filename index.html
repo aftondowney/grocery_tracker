@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
     </head>
   <body>
     <div class="jumbotron">
@@ -14,7 +15,6 @@
       <h2 id="littleJumbo">Keep track of what you have and what you need in your fridge and pantry.</h2>
     </div>
     <div class="container">
-
       <div class="row">
         <div class="col-sm-6" >
           <div id="shopping">
@@ -54,13 +54,36 @@
                 <label for="notePantry">Notes</label>
                 <textarea class="form-control" id="notePantry"></textarea>
               </div>
-                <button type="submit" class="btn" id="pantrySubmit">Add to Shopping List</button>
+                <button type="submit" class="btn" id="pantrySubmit">Add to Pantry List</button>
             </form>
             <ul id="pantryList">
             </ul>
           </div>
         </div>
       </div>
+    </div>
+    <div id="footer">
+    <p class="footer">Addtional Resources</p>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#myModal">Fridge Tips</button>
+    <!-- Modal -->
+    <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Tips and Tricks for freshness</h4>
+          </div>
+          <div class="modal-body">
+           <img id="fridgeLayout" src="images/fridgeLayout.jpg"/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </div>
   </body>
 </html>
