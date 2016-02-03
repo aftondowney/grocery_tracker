@@ -58,8 +58,14 @@ $(document).ready(function() {
     var noteShopping = $("textarea#noteShopping").val();
     var newShopEntry = new Shopping(shopItem, shopQuantity, noteShopping);
     shoppingList.push(newShopEntry);
-    $('ul#shoppingList').append("<li><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>'); //this creates a new shopping list item with note.
+    $('ul#shoppingList').append("<div class='dragShopping'><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</div>'); //this creates a new shopping list item with note.
+    //DRAG AND DROPPABLE ITEMS
 
+    $(".dragShopping").draggable();
+
+
+
+    });
     //  shoppingList.push(newShopEntry);
     //   $('ul#shoppingList').append('<li><span class="shopping">' + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" +  '</span>' + '<span class="btn-sm btn-default" id="edit">' + 'edit' + '</span>' + '<span class="btn-sm btn-default" id="delete">' + 'delete' + '</span></li>'); USE TO REWORK EDIT/DELETE BUTTONS
 
@@ -79,7 +85,7 @@ $(document).ready(function() {
       $(this).wrap("<strike>");
       $('ul#pantryList').append("<li><span class='pantry'>" + shopItem + " x" + '<span class="quantity">' + shopQuantity  + "(" + noteShopping + ")" + '</span></li>');
     }); //transfer shopping list item to pantry
-  });
+
 
 ////////begining of pantry stuff
 
@@ -87,12 +93,14 @@ $(document).ready(function() {
     event.preventDefault();
     var pantryList = [];
     var pantryItem = $("input#pantryItem").val();
-    var pantryQuantity = parseInt($("#pantryQuantity").val());
+    var pantryQuantity = $("#pantryQuantity").val();
     var notePantry = $("textarea#notePantry").val();
     var newPantryEntry = new Pantry(pantryItem, pantryQuantity, notePantry);
     pantryList.push(newPantryEntry);
-    $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " x" + pantryQuantity + "(" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>');
-      //look into making buttons smaller? diff color?
+    $('ul#pantryList').append("<div class='dragPantry'><span class='pantry'>" + pantryItem + " x" + pantryQuantity + "(" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</div>');
+
+    $(".dragPantry").draggable();
+
     resetFields();
 
     $("span.shopping").last().click(function() {
@@ -110,6 +118,4 @@ $(document).ready(function() {
 
 
   });
-
-
-  });
+});
