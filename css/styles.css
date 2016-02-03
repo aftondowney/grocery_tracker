@@ -97,6 +97,19 @@ li:hover {
   font-size: 16px;
 }
 
-#fridgeLayout {
+#fridgeLayout, #shelfLife {
   width: 100%;
+  border-radius: 40px;
+}
+
+#shelfLifePic {
+  border-radius: 40px;
+}
+
+.modal-header, .modal-footer {
+  background-color: #88c0c3;
+}
+
+.modal-body {
+  background-color: #a6a6a6;
 }
