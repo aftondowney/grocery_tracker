@@ -87,11 +87,11 @@ $(document).ready(function() {
     event.preventDefault();
     var pantryList = [];
     var pantryItem = $("input#pantryItem").val();
-    var pantryQuantity = parseInt($("#pantryQuantity").val());
+    var pantryQuantity = $("#pantryQuantity").val();
     var notePantry = $("textarea#notePantry").val();
     var newPantryEntry = new Pantry(pantryItem, pantryQuantity, notePantry);
     pantryList.push(newPantryEntry);
-    $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " x" + pantryQuantity + "(" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>');
+    $('ul#pantryList').append("<li><span class='pantry'>" + pantryItem + " x" + pantryQuantity + " (" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>');
       //look into making buttons smaller? diff color?
     resetFields();
 
@@ -107,9 +107,5 @@ $(document).ready(function() {
       $('ul#pantryList').on('click', '.delete', function(){
         $(this).parent().remove(); //makes edit/delete work
       });
-
-
-  });
-
-
+    });
   });
