@@ -2,11 +2,21 @@
   border-radius: 10px;
   height: 75px;
   text-align: center;
-  font-size: 45px;
+  font-size: 40px;
   border-spacing: inherit;
-  background-color: #AEE1E4;
+  background-color: #88c0c3;
+  text-shadow: -0.5px 0 #d9d9d9, 0 0.5px #d9d9d9, 0.5px 0 #d9d9d9, 0 -0.5px #d9d9d9;
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
+  color: #003d66;
 }
 
+body {
+  background-color: #a6a6a6;
+}
+
+.form-control {
+  background-color : #F1F1F1;
+}
 
 #shoppingForm, #pantryForm {
   display: none;
@@ -25,8 +35,8 @@ li:hover {
   background-size: 100%;
   color: #003d66;
   background-repeat: no-repeat;
-  background-position: right;
-  z-index: 1;
+  background-position: bottom;
+  text-indent: 90px;
 }
 
 #jumbo {
