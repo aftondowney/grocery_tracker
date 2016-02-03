@@ -58,59 +58,14 @@ $(document).ready(function() {
     var noteShopping = $("textarea#noteShopping").val();
     var newShopEntry = new Shopping(shopItem, shopQuantity, noteShopping);
     shoppingList.push(newShopEntry);
-    $('ul#shoppingList').append("<li id='drop-target-shopping' ondrop='drop(event)' ondragover='allowDrop(event)' draggable='true'><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>'); //this creates a new shopping list item with note.
+    $('ul#shoppingList').append("<div class='dragShopping'><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</div>'); //this creates a new shopping list item with note.
     //DRAG AND DROPPABLE ITEMS
-        var dropZoneOne = document.querySelector('#drop-target-pantry');
-        var dragElements = document.querySelector('#shoppingList li')
-        var elementDragged = null;
 
-        for (var i = 0; i < dragElements.length; i++) {
+    $(".dragShopping").draggable();
 
-          dragElements[i].addEventListener('dragstart', function(e) {
-              e.dataTransfer.effectAllowed = 'move';
-              e.dataTransfer.setData('text', this.innerHTML);
-              elementDragged = this;
-          });
 
-          dragElements[i].addEventListener('dragend', function(e) {
-            elementDragged = null;
-          });
 
-        };
-
-        dropZoneOne.addEventListener('dragover', function(e) {
-          if (e.preventDefault) {
-            e.preventDefault();
-          }
-
-          e.dataTransfer.droppEffect = 'move';
-
-          return false;
-
-        });
-
-        dropZoneOne.addEventListener('dragenter', function(e) {
-          this.className = 'over';
-        });
-
-        dropZoneOne.addEventListener('dragleave', function(e) {
-          this.className = '';
-        });
-
-        dropZoneOne.addEventListener('drop', function(e) {
-          if (e.preventDefault) e.preventDefault();
-          if (e.stopPropagation) e.stopPropagation();
-
-          this.className = '';
-          this.innerHTML = 'Hey there!' + e.dataTransfer.getData('text');
-
-          return false;
-        });
-
-        document.querySelector('#shoppingList li').removeChild(elementDragged);
-
-        return false;
-      });
+    });
     //  shoppingList.push(newShopEntry);
     //   $('ul#shoppingList').append('<li><span class="shopping">' + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" +  '</span>' + '<span class="btn-sm btn-default" id="edit">' + 'edit' + '</span>' + '<span class="btn-sm btn-default" id="delete">' + 'delete' + '</span></li>'); USE TO REWORK EDIT/DELETE BUTTONS
 
@@ -135,7 +90,6 @@ $(document).ready(function() {
 ////////begining of pantry stuff
 
   $("form#pantryForm").submit(function(event) {
-debugger;
     event.preventDefault();
     var pantryList = [];
     var pantryItem = $("input#pantryItem").val();
@@ -143,60 +97,9 @@ debugger;
     var notePantry = $("textarea#notePantry").val();
     var newPantryEntry = new Pantry(pantryItem, pantryQuantity, notePantry);
     pantryList.push(newPantryEntry);
-    $('ul#pantryList').append("<li id='drop-target-pantry' ondrop='drop(event)' ondragover='allowDrop(event)' draggable='true'><span class='pantry'>" + pantryItem + " x" + pantryQuantity + "(" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>');
+    $('ul#pantryList').append("<div class='dragPantry'><span class='pantry'>" + pantryItem + " x" + pantryQuantity + "(" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</div>');
 
-
-      var dropZoneTwo = document.querySelector('#drop-target-shopping');
-      var dragElements = document.querySelector('#pantryList')
-      var elementDragged = null;
-
-      for (var i = 0; i < dragElements.length; i++) {
-
-        dragElements[i].addEventListener('dragstart', function(e){
-            e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text', this.innerHTML);
-            elementDragged = this;
-        });
-
-        dragElements[i].addEventListener('dragend', function(e) {
-          elementDragged = null;
-        });
-
-      };
-
-      dropZoneTwo.addEventListener('dragover', function(e) {
-        if (e.preventDefault) {
-          e.preventDefault();
-        }
-
-        e.dataTransfer.droppEffect = 'move';
-
-        return false;
-
-      });
-
-      dropZoneTwo.addEventListener('dragenter', function(e) {
-        this.className = 'over';
-      });
-
-      dropZoneTwo.addEventListener('dragleave', function(e) {
-        this.className = '';
-      });
-
-      dropZoneTwo.addEventListener('drop', function(e) {
-        if (e.preventDefault) e.preventDefault();
-        if (e.stopPropagation) e.stopPropagation();
-
-        this.className = '';
-        this.innerHTML = 'Hey there!' + e.dataTransfer.getData('text');
-
-        return false;
-      });
-
-      document.querySelector('#pantryList li').removeChild(elementDragged);
-
-      return false;
-    });
+    $(".dragPantry").draggable();
 
     resetFields();
 
@@ -215,3 +118,4 @@ debugger;
 
 
   });
+});

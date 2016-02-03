@@ -44,3 +44,13 @@ li:hover {
 .edit {
   margin: 14px 14px 14px 14px;
 }
+
+#left1 {
+  background-color: magenta;
+  width: 45%
+}
+
+#right1 {
+  background-color: green;
+  width: 45%
+}
