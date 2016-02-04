@@ -117,3 +117,19 @@ li:hover {
 .searchbox {
   float: right;
 }
+
+.recipeLinks {
+  color: #003d66;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+.trashCan {
+  float: right;
+  font-size: 40px;
+  padding-right: 20px;
+  padding-top: 25px;
+
+}
