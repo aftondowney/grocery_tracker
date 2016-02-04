@@ -28,6 +28,8 @@ Pantry.prototype.itemDecrease = function(item){
     return this.pantryQuantity -= itemsPurchased;
 }
 
+
+
 function resetFields() {
   $("input#shopItem").val("");
   $("input#shopQuantity").val("");
@@ -59,9 +61,8 @@ $(document).ready(function() {
     var newShopEntry = new Shopping(shopItem, shopQuantity, noteShopping);
     shoppingList.push(newShopEntry);
 
-    $('ul#shoppingList').append("<div class='dragShopping'><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</div>'); //this creates a new shopping list item with note.
-    //DRAG AND DROPPABLE ITEMS
-    $(".dragShopping").draggable();
+    $('ul#shoppingList').append("<li class='ui-state-default'><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>'); //this creates a new shopping list item with note.
+
 
     });
 
@@ -75,31 +76,28 @@ $(document).ready(function() {
        $(this).parent().remove();
      });
 
-     resetFields();
 
-      $("span.glyphicon-arrow-right").last().click(function() {
-      $('ul#pantryList').append("<li><span class='pantry'>" + shopItem + " x" + '<span class="quantity">' + shopQuantity  + " (" + noteShopping + ")" + '</span></li>');
-    }); //transfer shopping list item to pantry
+
 
 
 ////////begining of pantry stuff
 
   $("form#pantryForm").submit(function(event) {
+
     event.preventDefault();
     var pantryList = [];
     var pantryItem = $("input#pantryItem").val();
-    var pantryQuantity = $("#pantryQuantity").val();
+    var pantryQuantity = $("input#pantryQuantity").val();
     var notePantry = $("textarea#notePantry").val();
     var newPantryEntry = new Pantry(pantryItem, pantryQuantity, notePantry);
     pantryList.push(newPantryEntry);
 
-    $('ul#pantryList').append("<div class='dragPantry'><span class='pantry'>" + pantryItem + " x" + pantryQuantity + "(" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</div>');
+    $('ul#pantryList').append("<li class='ui-state-highlight'><span class='pantry'>" + pantryItem + " x" + pantryQuantity + "(" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>');
 
-    $(".dragPantry").draggable();
+
+    });
 
     resetFields();
-
-
 
       $('ul#pantryList').on('click', '.edit', function(){
         $(this).parent().attr('contenteditable', 'true');
@@ -108,9 +106,13 @@ $(document).ready(function() {
       $('ul#pantryList').on('click', '.delete', function(){
         $(this).parent().remove(); //makes edit/delete work
       });
-    });
 
 
+      $(function(){
+        $("#shoppingList, #pantryList").sortable({
+          connectWith: ".connectedSortable"
+        }).disableSelection();
+      })
 ///sticky footer test
 
     $(window).bind("load", function() {
@@ -141,4 +143,4 @@ $(document).ready(function() {
                .resize(positionFooter)
 
    });
-});
+ });

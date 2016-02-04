@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Fridge</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="smoothness/jquery-ui.css" media="screen" title="no title" charset="utf-8">
     <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
-    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     </head>
@@ -38,7 +39,7 @@
                 <button type="submit" class="btn" id="shoppingSubmit">Add to Shopping List</button>
             </form>
           </div>
-          <ul id="shoppingList">
+          <ul id="shoppingList" class="connectedSortable">
           </ul>
       </div>
         <div class="col-sm-6">
@@ -60,11 +61,14 @@
                 <button type="submit" class="btn" id="pantrySubmit">Add to Pantry List</button>
 
             </form>
-            <ul id="pantryList">
+            <ul id="pantryList" class="connectedSortable">
             </ul>
         </div>
       </div>
     </div>
+
+
+
 
     <div id="footer">
       <!-- Button trigger modal -->
