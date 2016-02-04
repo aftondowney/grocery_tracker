@@ -117,3 +117,11 @@ li:hover {
 .searchbox {
   float: right;
 }
+
+.recipeLinks {
+  color: #003d66;
+}
+
+h3 {
+  text-decoration: underline;
+}
