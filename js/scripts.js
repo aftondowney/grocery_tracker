@@ -99,9 +99,7 @@ $(document).ready(function() {
 
     resetFields();
 
-    $("span.glyphicon-arrow-left").last().click(function() {
-      $('ul#shoppingList').append("<li><span class='pantry'>" + pantryItem + " x" + '<span class="quantity">' + pantryQuantity  + " (" + notePantry + ")" + '</span></li>'); //sends pantry item to shopping list
-    });
+
 
       $('ul#pantryList').on('click', '.edit', function(){
         $(this).parent().attr('contenteditable', 'true');
