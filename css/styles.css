@@ -52,10 +52,8 @@ label, li {
 
 #shoppingList, #pantryList {
   margin-top: 15px;
-  border: 1px solid #eee;
-  width: 142px;
-  min-height: 20px;
-  list-style-type: none;
+  width: 100%;
+  min-height: 500px;
   margin: 0;
   padding: 5px 0 0 0;
   float: left;
@@ -66,7 +64,11 @@ label, li {
   margin: 0 5px 5px 5px;
   padding: 5px;
   font-size: 1.2em;
-  width: 120px;
+  width: 90%;
+  list-style-type:upper-roman;
+  background: radial-gradient(#88c0c3, #ceedee);
+  border: 1px solid #003d66;
+  border-radius: 10px;
 }
 
 li:hover {
