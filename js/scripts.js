@@ -61,22 +61,22 @@ $(document).ready(function() {
     var newShopEntry = new Shopping(shopItem, shopQuantity, noteShopping);
     shoppingList.push(newShopEntry);
 
-    $('ul#shoppingList').append("<li class='ui-state-default'><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>'); //this creates a new shopping list item with note.
-
-
-    });
+    $('ul#shoppingList').append("<li class='ui-state-default'><span class='shopping'>" + shopItem + " x" + shopQuantity + " (" + noteShopping + ")" + '</span>' + '</li>'); //this creates a new shopping list item with note.
 
     resetFields();
 
-     $('ul#shoppingList').on('click', '.edit', function(){
-       $(this).parent().attr('contenteditable', 'true');
+    });
+
+
+     $(function() {
+         $(".stack").draggable();
+
+         $('.trashCan').droppable({
+             drop: function(event, ui) {
+                 $(ui.draggable).remove();
+             }
+         });
      });
-
-     $('ul#shoppingList').on('click', '.delete', function(){
-       $(this).parent().remove();
-     });
-
-
 
 
 
@@ -92,21 +92,22 @@ $(document).ready(function() {
     var newPantryEntry = new Pantry(pantryItem, pantryQuantity, notePantry);
     pantryList.push(newPantryEntry);
 
-    $('ul#pantryList').append("<li class='ui-state-highlight'><span class='pantry'>" + pantryItem + " x" + pantryQuantity + "(" + notePantry + ")" + '</span>' + '<input type="submit" class="edit btn-sm" value="Edit">' + '<input type="submit" class="done delete btn-sm" value="Delete">' + '</li>');
+    $('ul#pantryList').append("<li class='ui-state-highlight'><span class='pantry'>" + pantryItem + " x" + pantryQuantity + "(" + notePantry + ")" + '</span>' + '</li>');
 
+        resetFields();
 
     });
 
-    resetFields();
 
-      $('ul#pantryList').on('click', '.edit', function(){
-        $(this).parent().attr('contenteditable', 'true');
+      $(function() {
+          $(".stack").draggable();
+
+          $('.trashCan').droppable({
+              drop: function(event, ui) {
+                  $(ui.draggable).remove();
+              }
+          });
       });
-
-      $('ul#pantryList').on('click', '.delete', function(){
-        $(this).parent().remove(); //makes edit/delete work
-      });
-
 
       $(function(){
         $("#shoppingList, #pantryList").sortable({
