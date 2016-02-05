@@ -68,15 +68,15 @@ $(document).ready(function() {
     });
 
 
-     $(function() {
-         $(".stack").draggable();
+   $(function() {
+    $(".stack").draggable();
 
-         $('.trashCan').droppable({
-             drop: function(event, ui) {
-                 $(ui.draggable).remove();
-             }
-         });
-     });
+    $('.trashCan').droppable({
+      drop: function(event, ui) {
+        $(ui.draggable).remove();
+      }
+    });
+   });
 
 
 
@@ -99,21 +99,21 @@ $(document).ready(function() {
     });
 
 
-      $(function() {
-          $(".stack").draggable();
+    $(function() {
+     $(".stack").draggable();
 
-          $('.trashCan').droppable({
-              drop: function(event, ui) {
-                  $(ui.draggable).remove();
-              }
-          });
-      });
+     $('.trashCan').droppable({
+       drop: function(event, ui) {
+         $(ui.draggable).remove();
+       }
+     });
+    });
 
-      $(function(){
-        $("#shoppingList, #pantryList").sortable({
-          connectWith: ".connectedSortable"
-        }).disableSelection();
-      })
+    $(function(){
+      $("#shoppingList, #pantryList").sortable({
+        connectWith: ".connectedSortable"
+      }).disableSelection();
+    })
 ///sticky footer test
 
     $(window).bind("load", function() {
@@ -123,25 +123,23 @@ $(document).ready(function() {
 
        positionFooter();
 
-      function positionFooter() {
-
-        footerHeight = $footer.height();
-        footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
-       if ( ($(document.body).height()+footerHeight) < $(window).height()) {
-           $footer.css({
-                position: "absolute"
-           }).animate({
-                top: footerTop
-           })
-       } else {
-           $footer.css({
-                position: "static"
-           })
-       }
-  }
-       $(window)
-               .scroll(positionFooter)
-               .resize(positionFooter)
-
+    function positionFooter() {
+      footerHeight = $footer.height();
+      footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+      if (($(document.body).height()+footerHeight) < $(window).height()) {
+        $footer.css({
+          position: "absolute"
+          }).animate({
+            top: footerTop
+          })
+      } else {
+        $footer.css({
+          position: "static"
+        })
+      }
+    }
+    $(window)
+      .scroll(positionFooter)
+      .resize(positionFooter)
    });
  });

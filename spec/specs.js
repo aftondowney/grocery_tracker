@@ -1,9 +1,11 @@
+
 describe('Pantry', function() {
   it("creates a new list of items already existing in users pantry", function() {
-    var testPantry = new Pantry ("banana", 3);
+    var testPantry = new Pantry ("banana", 3, "green");
     expect(testPantry.pantryName).to.equal("banana");
-    expect(testPantry.pantryQuantity).to.equal(3);
-  });
+    expect(testPantry.pantryQuantity).to.equal(3)
+    expect(testPantry.pantryNote).to.equal("green");
+  })
 
   it ("will increase item quantity of pantry based on user input", function() {
     var testPantry = new Pantry ("banana", 3);
