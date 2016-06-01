@@ -1,4 +1,4 @@
-# _Grocery Tracker_
+# _Fridg_
 
 #### _Grocery list application, 02/01/2016_
 
